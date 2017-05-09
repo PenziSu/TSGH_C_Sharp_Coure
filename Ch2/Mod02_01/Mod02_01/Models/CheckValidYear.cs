@@ -15,7 +15,10 @@ namespace Mod02_01.Models
         }
         public override bool IsValid(object value)
         {
-            int year = (int)value;
+            int year = 1900;
+            if (value != null)
+                year = (int)value;
+
             if (year < 1598)
             {
                 return false;

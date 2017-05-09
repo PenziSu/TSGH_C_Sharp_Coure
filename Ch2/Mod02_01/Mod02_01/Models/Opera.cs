@@ -14,15 +14,19 @@ namespace Mod02_01.Models
         [Display(Name = "編號")]
         [Required]
         public int OperaID { get; set; }
+
         [DisplayName("歌劇名稱")]
         [Required(ErrorMessage = "歌劇名稱不可以為空白")]
         [StringLength(200)]
         public string Title { get; set; }
+
         [DisplayName("年代")]
         [CheckValidYear]
         public int? Year { get; set; }
+
         [DisplayName("作者")]
         [Required]
+        [StringLength(100)]
         public string Composer { get; set; }
     }
 }

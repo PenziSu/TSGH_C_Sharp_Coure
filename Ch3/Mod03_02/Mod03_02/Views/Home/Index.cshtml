@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @ViewBag.date2.ToShortDateString()
+        <hr />
+        @(( (DateTime) ViewData["date1"] ).ToShortDateString())
+        <br />
+        ViewData = @(((DateTime)ViewData["date1"]).ToShortDateString())<br/>
+        ViewBag = @ViewBag.date2.ToShortDateString() <br /> 
+    </div>
+</body>
+</html>

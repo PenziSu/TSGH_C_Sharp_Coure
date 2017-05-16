@@ -17,6 +17,9 @@ namespace Mod02_01
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //Lab2_4: 啟用種子資料建立
             Database.SetInitializer<OperaContext>(new OperasInitializer());
+
+            //Lab3_9
+            GlobalFilters.Filters.Add(new LogActionFilter());
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace Mod02_01.Controllers
 {
@@ -30,10 +31,11 @@ namespace Mod02_01.Controllers
 
         // Lab2_4
         // GET: Opera/Index
+        [LogActionFilter]
         public ActionResult Index()
         {
             OperaContext context = new OperaContext();
-
+            Debug.WriteLine("Opera.Index");
             return View(context.Operas.ToList());
         }
 

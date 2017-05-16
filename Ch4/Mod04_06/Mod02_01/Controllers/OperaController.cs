@@ -30,8 +30,7 @@ namespace Mod02_01.Controllers
         //}
 
         // Lab2_4
-        // GET: Opera/Index
-        [LogActionFilter]
+        // GET: Opera/Index        
         public ActionResult Index()
         {
             OperaContext context = new OperaContext();
@@ -139,8 +138,18 @@ namespace Mod02_01.Controllers
                 return HttpNotFound();
             context.Operas.Remove(o);
             context.SaveChanges();
-            return RedirectToAction("Index");
-            
+            return RedirectToAction("Index");            
+        }
+
+        //Lab04_06
+        public ActionResult FilterData(int number)
+        {
+            OperaContext context = new OperaContext();
+            //LINQ
+            var query = (from o in context.Operas          //從context.Operas查詢所有結果
+                         orderby o.Year descending         //將查詢結果以年分降冪排序
+                         select o).Take(number).ToList();  //接著取出number指定的數量資料
+            return View("Index", query);  //將結果交給View，這個View是Index method的View
         }
     }
 }

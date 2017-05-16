@@ -46,6 +46,13 @@
                 </tr>
             }
         </table>
+
+        @*Lab04_06*@
+        @using (Html.BeginForm("filterdata", "opera", FormMethod.Get))
+        {
+            <input type="text" name="number" />
+            <input type="submit" />
+        }
     </div>
 </body>
 </html>

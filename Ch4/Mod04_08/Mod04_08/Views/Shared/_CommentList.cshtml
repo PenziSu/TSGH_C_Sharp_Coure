@@ -1,0 +1,10 @@
+﻿@*@model Mod04_08.Models.Comment*@
+@model IEnumerable<Mod04_08.Models.Comment>
+
+<ul>
+    @foreach (var item in Model)
+            {
+        <li>@item.Subject--@item.Id</li>
+    }
+</ul>
+

@@ -1,0 +1,27 @@
+﻿@*@model Mod04_08.Models.Comment*@
+@model IEnumerable<Mod04_08.Models.Comment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetComments</title>
+</head>
+<body>
+    <div>
+        <h1>Get Comments</h1>
+        @*<ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Subject--@item.Id</li>
+            }
+        </ul>*@
+        @Html.Partial("_CommentList")
+    </div>
+</body>
+</html>

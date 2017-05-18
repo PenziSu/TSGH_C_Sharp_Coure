@@ -28,5 +28,19 @@ namespace Mod04_09.Controllers
 
             return View(result);
         }
+
+        //GET: Home/ProductByCategory/1
+        //GET: Home/ProductByCategory?id=1
+        public ActionResult ProductsByCategory(int id)
+        {
+            NorthwindEntities db = new NorthwindEntities();
+            var query = from p in db.Products
+                        where p.CategoryID == id
+                        select p;
+
+            var result = query.ToList();
+
+            return View(result);
+        }
     }
 }

@@ -12,9 +12,16 @@
     <script>
         //以匿名函式執行註冊
         window.onload = function () {
+            //可以用.onXXXX的事件就盡量使用
             document.getElementById("Button2").onclick = function /*匿名函式*/() {
                 clickMe();
             }
+            //無法用.onXXX的事件就以下列方式註冊
+            document.getElementById("Button3").addEventListener("click", function () {
+
+                clickMe();
+
+            })
         }
                  
     </script>
@@ -26,6 +33,8 @@
         <input type="button" id="Button1" value="Click Me" onclick="clickMe()" />
 
         <input id="Button2" type="button" value="DOM Level 0 Test" />
+
+        <input id="Button3" type="button" value="DOM Level 2 Test" />
     </div>
     
 </body>

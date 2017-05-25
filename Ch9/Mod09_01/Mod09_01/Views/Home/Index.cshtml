@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <script>
-        function ready() {
+        //以匿名函式執行註冊
+        window.onload = function () {
             document.getElementById("Button2").onclick = function /*匿名函式*/() {
                 clickMe();
             }
         }
-        //以程式執行註冊
-        window.onload = ready;
+                 
     </script>
 
     <script src="~/Scripts/JavaScript1.js"></script>

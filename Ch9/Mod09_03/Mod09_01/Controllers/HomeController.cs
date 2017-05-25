@@ -20,5 +20,11 @@ namespace Mod09_01.Controllers
         {
             return View();
         }
+
+        // GET: index2
+        public ActionResult Index2()
+        {
+            return View();
+        }
     }
 }

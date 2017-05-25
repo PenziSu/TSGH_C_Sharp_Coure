@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Index2</title>
 
     <script src="~/Scripts/jquery-3.1.1.js"></script>
 
@@ -35,25 +35,19 @@
 
             //存取Text1的值
             $('#Button4').click(function () {
-                alert("Hello： " + document.getElementById("Text1").value);
+                //alert("Hello： " + document.getElementById("Text1").value);
+                //設定Text預設值
+                $("#Text1").val("Sylvie");
+                //jQuery語法取得Text內容
+                alert("Hello：" + $("#Text1").val());
             })
-        }                 
+        }
     </script>
-
-    <script src="~/Scripts/JavaScript1.js"></script>
 </head>
 <body>
     <div> 
-        <input type="button" id="Button1" value="Click Me" onclick="clickMe()" />
-
-        <input id="Button2" type="button" value="DOM Level 0 Test" />
-
-        <input id="Button3" type="button" value="DOM Level 2 Test" />
-
-        <hr />
         Name : <input id="Text1" type="text" />
         <input id="Button4" type="button" value="Hello" />
     </div>
-    
 </body>
 </html>

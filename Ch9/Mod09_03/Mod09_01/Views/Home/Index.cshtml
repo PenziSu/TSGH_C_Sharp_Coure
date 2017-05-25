@@ -30,6 +30,10 @@
             $('#Button3').bind("click", function () {
                 clickMe();
             })
+
+            $('#Button4').click(function () {
+                alert("Hello： " + document.getElementById("Text1").value);
+            })
         }
                  
     </script>
@@ -43,6 +47,11 @@
         <input id="Button2" type="button" value="DOM Level 0 Test" />
 
         <input id="Button3" type="button" value="DOM Level 2 Test" />
+
+
+        <hr />
+        Name : <input id="Text1" type="text" />
+        <input id="Button4" type="button" value="Hello" />
     </div>
     
 </body>

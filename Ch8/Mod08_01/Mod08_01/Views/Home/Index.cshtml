@@ -3,6 +3,16 @@
         @Html.ActionLink("refresh","HelloWorld","Home")
         <hr />
         @Html.Action("HelloWorld","Home")
-        
+        Server Time: @DateTime.Now
+        <div id="divMessage" style="background-color:yellow">xx</div>
+        @Ajax.ActionLink("AJAX HelloWorld","HelloWorld","Home",new AjaxOptions
+            {
+             HttpMethod="GET",
+             UpdateTargetId="divMessage",
+             InsertionMode= InsertionMode.Replace
+            })
     </div>
+
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 </body>

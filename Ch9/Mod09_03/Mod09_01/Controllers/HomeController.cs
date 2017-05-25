@@ -13,5 +13,12 @@ namespace Mod09_01.Controllers
         {
             return View();
         }
+
+        // GET: SelectorDemo
+        public ActionResult SelectorDemo()
+            
+        {
+            return View();
+        }
     }
 }

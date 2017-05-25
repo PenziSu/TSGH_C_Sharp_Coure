@@ -9,19 +9,31 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>SelectorDemo</title>
+    <style>
+        .dd{
+            color:yellow;
+            background-color:lightgray;
+            font-size:30px;                
+        }
+    </style>
     <script src="~/Scripts/jquery-3.1.1.js"></script>
     <script>
-        window.onload = function () {
-            $("h1").css({
-                "color": "blue",
-                "background-Color": "yellow",
-                "font-size":"100px"
-            });
-        };
-        
+        $(function () {            
+            //兩個按鈕改變CSS樣式
+            $("#Button1").click(function () {
+                $("h1").addClass("dd");
+            })
+            $("#Button2").click(function () {
+                $("h1").removeClass("dd");
+            })
+        });
     </script>    
 </head>
 <body>
+
+    <input id="Button1" type="button" value="Change Sytle" />
+    <input id="Button2" type="button" value="Reset Sytle" />
+
     <div id="div1"> 
         <h1>Database</h1>
         <div class="myclass">

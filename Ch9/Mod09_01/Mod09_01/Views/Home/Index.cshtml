@@ -9,16 +9,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-
     <script>
-        function clickMe() {
-            alert("Hi!");
+        function ready() {
+            document.getElementById("Button2").onclick = function /*匿名函式*/() {
+                clickMe();
+            }
         }
     </script>
+
+    <script src="~/Scripts/JavaScript1.js"></script>
 </head>
-<body>
+<body onload="ready();"><!--當網頁載入完成，執行ready功能-->
     <div> 
         <input type="button" id="Button1" value="Click Me" onclick="clickMe()" />
+
+        <input id="Button2" type="button" value="DOM Level 0 Test" />
     </div>
+    
 </body>
 </html>

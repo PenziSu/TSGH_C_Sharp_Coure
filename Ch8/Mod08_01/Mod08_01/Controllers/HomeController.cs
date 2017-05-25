@@ -21,5 +21,12 @@ namespace Mod08_01.Controllers
             return PartialView();
 
         }
+
+        public ActionResult HelloWorld(string userName)
+        {
+            ViewBag.message = "HelloWorld: " +userName+ DateTime.Now.ToString();
+            return PartialView("HelloWorld");
+
+        }
     }
 }

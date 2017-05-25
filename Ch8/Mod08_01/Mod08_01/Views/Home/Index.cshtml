@@ -11,6 +11,13 @@
              UpdateTargetId="divMessage",
              InsertionMode= InsertionMode.Replace
             })
+        <hr />
+        @Ajax.ActionLink("AJAX HelloWorld", "HelloWorld", new {userName = "Mary"},new AjaxOptions
+               {
+                   HttpMethod = "GET",
+                   UpdateTargetId = "divMessage",
+                   InsertionMode = InsertionMode.Replace
+               })
     </div>
 
     <script src="~/Scripts/jquery-3.1.1.js"></script>

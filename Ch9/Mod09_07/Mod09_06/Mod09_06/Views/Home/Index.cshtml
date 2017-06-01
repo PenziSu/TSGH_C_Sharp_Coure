@@ -15,16 +15,35 @@
     @*加入CSS樣式，萬年曆即可呈現漂亮的版面*@
     <link href="~/Content/themes/base/all.css" rel="stylesheet" />    
     <script>
-        $(function () {            
+        $(function () {
+            //日期選擇器
             $("#Text1").datepicker();
+            //項目收合效果
+            $("#div1").accordion();
         })
 
 
     </script>
 </head>
 <body>
-    <div> 
+    <div>
+        @*日期選擇器*@ 
         出發日期：<input id="Text1" type="text" />
+        @*項目收合效果*@
+        <div id="div1">
+            <h1>Database</h1>
+            <div class="myclass">
+                SQL
+            </div>
+            <h1>Programming</h1>
+            <div class="myclass">
+                ASP.NET MVC
+            </div>
+            <h1>Management</h1>
+            <div class="myclass">
+                PMP
+            </div>
+        </div>
     </div>
 </body>
 </html>

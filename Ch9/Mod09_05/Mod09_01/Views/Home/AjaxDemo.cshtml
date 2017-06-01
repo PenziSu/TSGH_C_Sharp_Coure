@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AjaxDemo</title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //註冊按鈕的按下效果
+            $("#Button1").click(function () {
+                $.ajax({
+                    type: "POST", //送出POST請求
+                    url:"/CustomerInfo.asmx/GetCustomer", //要求執行的網址
+                    data: '{"id":"' + $("#Text1").val()+'"}', //payload內容是json格式的id+TextBox內容
+                    contentType: "application/json;charset=utf-8",//需要用Json格式傳送的重要命令
+                    success: function (data) { //網頁執行成功時接收data資料並且格式化資料呈現方式                        
+                        $("#result").text(data.d.CustomerId + "," + data.d.Name);
+                    }
+
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div> 
+        id = <input type="Text1" id="Text1" value="123" />
+        <input type="button" id="Button1" value="取得客戶名字" />
+        <div id="result"></div>
+    </div>
+</body>
+</html>

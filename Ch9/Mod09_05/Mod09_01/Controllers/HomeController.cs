@@ -45,5 +45,11 @@ namespace Mod09_01.Controllers
             }
             return View();            
         }
+
+        //GET: Home/AjaxDemo        
+        public ActionResult AjaxDemo(string id, string name)
+        {            
+            return View();
+        }
     }
 }

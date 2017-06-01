@@ -9,9 +9,30 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>JsonData</title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //註冊按鈕的按下效果
+            $("#button1").click(function () {
+                
+                $.ajax({
+                    type: "GET", //送出GET請求
+                    url:"JsonData", //要求執行JsonData function
+                    data: "id=3232&name=mary", //payload內容是id=1 name=mary
+                    success: function (data) { //網頁執行成功時接收data資料並且格式化資料呈現方式
+                        console.log(data);
+                        $("#result").text(data.EmpName + " --- " +data.empId + " --- " + data.Age)
+                    }
+
+                    });
+            });
+        });
+    </script>
 </head>
 <body>
     <div> 
+        <input type="button" id="button1" value="ajax" />
+        <div id="result"></div>
     </div>
 </body>
 </html>

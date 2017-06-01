@@ -26,5 +26,18 @@ namespace Mod09_01.Controllers
         {
             return View();
         }
+
+        //GET: Home/JsonData
+        //GET: Home/JsonData/123?name=John
+        public ActionResult JsonData(string id, string name)
+        {
+            var data =  new {
+                    empId = id,
+                    EmpName = name,
+                Age =DateTime.Now.Millisecond
+            };
+            //以JSON格式回傳資料
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

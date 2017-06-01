@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+
+    <script>
+        //以匿名函式於網頁載入完畢後執行註冊
+        window.onload = function () {
+            //可以用.onXXXX的事件就盡量使用
+            //document.getElementById("Button2").onclick = function /*匿名函式*/() {
+            //    clickMe();
+            //}
+            //以jQuery語法取代上述語法
+            $('#Button2').click(function () {
+                clickMe();
+            })
+
+            //無法用.onXXX的事件就以下列方式註冊
+            //document.getElementById("Button3").addEventListener("click", function () {
+            //    clickMe();
+            //})
+            //以jQuery語法取代上述語法
+            $('#Button3').bind("click", function () {
+                clickMe();
+            })
+
+            //存取Text1的值
+            $('#Button4').click(function () {
+                //alert("Hello： " + document.getElementById("Text1").value);
+                //設定Text預設值
+                $("#Text1").val("Sylvie");
+                //jQuery語法取得Text內容
+                alert("Hello：" + $("#Text1").val());
+            })
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        Name : <input id="Text1" type="text" />
+        <input id="Button4" type="button" value="Hello" />
+    </div>
+</body>
+</html>

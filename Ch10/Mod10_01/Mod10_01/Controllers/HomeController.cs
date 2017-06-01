@@ -12,7 +12,7 @@ namespace Mod10_01.Controllers
         {
             return View();
         }
-
+        [Authorize(Users = "mark@test.com")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

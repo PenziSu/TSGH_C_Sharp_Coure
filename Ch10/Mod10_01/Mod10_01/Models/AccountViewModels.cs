@@ -79,6 +79,7 @@ namespace Mod10_01.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        public string City { get; set; } //給VIEW用的屬性
     }
 
     public class ResetPasswordViewModel

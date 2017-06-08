@@ -50,9 +50,20 @@
             }).fail(function (e) {
                 console.log(e);
             });
-
+        
         });
 
+        $("#btnInsert").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Content("~/api/course/")",
+                data: $("#form1").serialize(),
+                success: function () {
+                    alert("Insert Done...");
+                }
+            })
+            
+        })
     });
 
 
@@ -62,11 +73,12 @@
     <div>
 
         <ul id="list"></ul>
-        <form>
+        <form id="form1">
             Id : <input type="text" id="id" name="Id" /> <br />
             Name : <input type="text" id="name" name="Name" /><br />
             <input type="button" id="btnList" value="List" />
             <input type="button" id="btnGet" value="Get" />
+            <input type="button" id="btnInsert" value="Insert" />
         </form>
 
 

@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script>
+
+    $(function () {
+
+        $("#btnList").click(function () {
+            $("#list").empty();
+            $.ajax({
+                type: "GET",
+                url: "/api/course",
+                success: function (data) {
+                    //data.forEach(function (item) {
+                    //    $("#list").append($("<li>").text(item.Id + "---" + item.Name));
+                    //});
+
+                    for (var i = 0; i < data.length; i++) {
+                        var li = $("<li>"); // <li />
+                        li.text(data[i].Id + "---" + data[i].Name); // <li>xxx</li>
+                        $("#list").append(li);
+                    }
+
+                }
+            });
+        });
+
+        $("#btnGet").click(function () {
+
+            $.ajax({
+
+                type: "GET",
+                url: "@Url.Content("~/api/Course/")" + $("#id").val(),
+                success: function (data) {
+                    if (data == null)
+                        $("#name").val("查無資料!!");
+                    else
+                        $("#name").val(data.Name);
+                }
+
+            }).fail(function (e) {
+                console.log(e);
+            });
+        
+        });
+
+        $("#btnInsert").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Content("~/api/course/")",
+                data: $("#form1").serialize(),
+                success: function () {
+                    alert("Insert Done...");
+                }
+            })
+            
+        })
+    });
+
+
+    </script>
+</head>
+<body>
+    <div>
+
+        <ul id="list"></ul>
+        <form id="form1">
+            Id : <input type="text" id="id" name="Id" /> <br />
+            Name : <input type="text" id="name" name="Name" /><br />
+            <input type="button" id="btnList" value="List" />
+            <input type="button" id="btnGet" value="Get" />
+            <input type="button" id="btnInsert" value="Insert" />
+        </form>
+
+
+    </div>
+</body>
+</html>

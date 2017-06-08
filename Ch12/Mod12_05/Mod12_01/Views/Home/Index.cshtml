@@ -64,6 +64,18 @@
             })
             
         })
+
+        $("#btnUpdate").click(function () {
+            $.ajax({
+                type: "PUT",
+                url: "@Url.Content("~/api/course/")",
+                data: $("#form1").serialize(),
+                success: function () {
+                alert("Update Done...");
+            }
+        })
+            
+    })
     });
 
 
@@ -79,6 +91,7 @@
             <input type="button" id="btnList" value="List" />
             <input type="button" id="btnGet" value="Get" />
             <input type="button" id="btnInsert" value="Insert" />
+            <input type="button" id="btnUpdate" value="Update" />
         </form>
 
 

@@ -71,10 +71,19 @@
                 url: "@Url.Content("~/api/course/")",
                 data: $("#form1").serialize(),
                 success: function () {
-                alert("Update Done...");
-            }
+                    alert("Update Done...");
+                }
+            })            
         })
-            
+
+        $("#btnDelete").click(function () {
+            $.ajax({
+                type: "DELETE",
+                url: "@Url.Content("~/api/course/")"+$("#id").val(),                
+                success: function () {
+                    alert("Delete Done...");
+                }
+        })            
     })
     });
 
@@ -92,6 +101,7 @@
             <input type="button" id="btnGet" value="Get" />
             <input type="button" id="btnInsert" value="Insert" />
             <input type="button" id="btnUpdate" value="Update" />
+            <input type="button" id="btnDelete" value="Delete" />
         </form>
 
 
